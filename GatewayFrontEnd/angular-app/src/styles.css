@@ -1,0 +1,61 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.mat-form-field{
+  width: 96%;
+  margin: 2%;
+  height: 40px;
+}
+
+.mat-card{
+  padding:5% 20% !important;
+}
+
+.half-width{
+   width: 46%;
+}
+
+.width-3{
+  width: 30%;
+  margin: 1.6%;
+}
+
+.mat-raised-button{
+  float:right;
+  margin-right:2%!important;
+}
+
+.full-width{
+  width: 100%;;
+}
+
+.top-spacing-small{
+  margin-top:2%;
+}
+
+.click-link{
+  cursor: pointer;
+}
+
+button{
+  margin-left: 5px !important;
+  margin-right: 5px !important;
+}
+
+.card-form-field{
+  width: 100%;
+}
+
+.reg-alert-item{
+color: black;
+    display: block;
+    padding: 5px;
+    width: 100%;
+    background: lightpink;
+    margin: 4px;
+    border: 1px solid red;
+    border-radius: 3px;
+}

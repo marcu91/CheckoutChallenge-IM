@@ -1,0 +1,57 @@
+<mat-card>
+  <mat-card-content>
+    <h3>
+      Merchant Information
+      <button mat-raised-button color="primary" (click)="sendShoppingCartDetails()"
+        matTooltip="Send a mock checkout payment request">SEND DATA</button>
+    </h3>
+    <mat-form-field appearance="outline">
+      <mat-label>Merchant ID</mat-label>
+      <input matInput placeholder="Merchant Id" [(ngModel)]="transactionData.merchantID">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Bank Name</mat-label>
+      <input matInput placeholder="Placeholder" [(ngModel)]="transactionData.bank">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Amount</mat-label>
+      <input matInput placeholder="Placeholder" [(ngModel)]="transactionData.amount">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="half-width">
+      <mat-label>Currency</mat-label>
+      <mat-select [(ngModel)]="transactionData.currency">
+        <mat-option value="EUR">EUR</mat-option>
+        <mat-option value="USD">USD</mat-option>
+        <mat-option value="GBP">GBP</mat-option>
+        <mat-option value="CAD">CAD</mat-option>
+        <mat-option value="RON">RON</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-content>
+    <h3>Card Details</h3>
+    <mat-form-field appearance="outline">
+      <mat-label>Card Number</mat-label>
+      <input matInput placeholder="Placeholder" [(ngModel)]="transactionData.card.cardNumber">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Holder Name</mat-label>
+      <input matInput placeholder="Placeholder" [(ngModel)]="transactionData.card.holderName">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="width-3">
+      <mat-label>Expiry Month</mat-label>
+      <input matInput placeholder="Placeholder" [(ngModel)]="transactionData.card.expiryMonth">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="width-3">
+      <mat-label>Expiry Year</mat-label>
+      <input matInput placeholder="Placeholder" [(ngModel)]="transactionData.card.expiryYear">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="width-3">
+      <mat-label>CVV</mat-label>
+      <input matInput placeholder="Placeholder" [(ngModel)]="transactionData.card.cvv">
+    </mat-form-field>
+  </mat-card-content>
+</mat-card>

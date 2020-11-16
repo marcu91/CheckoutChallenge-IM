@@ -1,0 +1,14 @@
+
+
+::ng-deep .order-actions{
+  margin-top: 20px;
+}
+
+::ng-deep .order-container{
+  overflow:auto;
+  height: 300px;
+}
+
+.mat-table{
+  width: 100%;
+}

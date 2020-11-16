@@ -1,0 +1,196 @@
+{
+	"info": {
+		"_postman_id": "1d9ec918-322c-49d0-a6eb-788d2bbd59e2",
+		"name": "Gateway",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TransactionController - Process",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQ3Jpc3RpYW4iLCJqdGkiOiIyZmE1NjM3Mi1jOGE3LTQ3YjEtYmIyMS1hNTk0ODcyOWZlMzMiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJHYXRld2F5TWVyY2hhbnRVc2VyIiwiZXhwIjoxNjAyNzgyMzQzLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjU0MTc2IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo0MjAwIn0.4-p6kmn6mALCHiWy_FCI-_Fas1rGXNxDK8LVONoJpBo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "        {\r\n            \"currency\":\"RON\",\r\n            \"amount\":500.00,\r\n            \"card\":{\r\n                \"cardNumber\":\"5170450230011041\",\r\n                \"holderName\":\"Marcu Iulian\",\r\n                \"expiryMonth\":\"05\",\r\n                \"expiryYear\":2022,\r\n                \"cvv\":\"111\"\r\n            },\r\n            \"merchantId\":\"B3E7C684-99A2-4253-898B-01515B92F1B1\",\r\n            \"bank\":\"LocalTestBank\"\r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:54176/transactions/process",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "54176",
+					"path": [
+						"transactions",
+						"process"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auth Register Merchant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Iulian-5\",\r\n    \"email\":\"julian_marcu@yahoo.com\",\r\n    \"password\":\"Password123!!!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:54176/authenticate/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "54176",
+					"path": [
+						"authenticate",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auth Register Admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Iulian-Admin-4\",\r\n    \"email\":\"julian_marcu@yahoo.com\",\r\n    \"password\":\"Password123!!!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:54176/authenticate/register-admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "54176",
+					"path": [
+						"authenticate",
+						"register-admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auth Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Iulian\",\r\n    \"password\":\"Password123!!!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:54176/authenticate/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "54176",
+					"path": [
+						"authenticate",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Bank Transaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"TransactionAmount\": 100.00,\"CardNumber\":\"5170450230011041\",\"CardCvv\":\"111\",\"CardHolderName\":\"Marcu Iulian\",\"CardExpiryMonth\":\"09\",\"CardExpiryYear\":\"2022\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:54177/Transactions/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "54177",
+					"path": [
+						"Transactions",
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get transaction for merchant Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQ3Jpc3RpYW4iLCJqdGkiOiI1OWMwYTUxMC01ZDEzLTQzNzItODA1Ni05MGNmZjdiYjg3ZGIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJHYXRld2F5TWVyY2hhbnRVc2VyIiwiZXhwIjoxNjAyODU3MjczLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjU0MTc2IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo0MjAwIn0.0e28ypjysP7jUkpD6E3obZaEphYuLTHfODsymdkqAiM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:54176/transactions/GetTransactionsByMerchantID/B3E7C684-99A2-4253-898B-01515B92F1B1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "54176",
+					"path": [
+						"transactions",
+						"GetTransactionsByMerchantID",
+						"B3E7C684-99A2-4253-898B-01515B92F1B1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

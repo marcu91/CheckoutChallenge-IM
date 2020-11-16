@@ -1,0 +1,19 @@
+<mat-card class="card-form">
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="register(form.value)">
+      <mat-form-field class="card-form-field">
+        <input matInput type="email" placeholder="UserName" formControlName="userName" />
+      </mat-form-field>
+      <mat-form-field class="card-form-field">
+        <input matInput type="password" placeholder="Password" formControlName="password" />
+      </mat-form-field>
+      <div style="display:block; height:50px">
+        <button mat-raised-button color="primary" [disabled]="!form.valid">Register</button>
+      </div>
+      <div class="reg-alert-item" *ngFor="let e of auth.errors">
+        {{e.description}}
+      </div>
+    </form>
+
+  </mat-card-content>
+</mat-card>

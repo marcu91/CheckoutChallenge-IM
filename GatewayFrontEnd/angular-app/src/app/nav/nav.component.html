@@ -1,0 +1,9 @@
+<mat-toolbar>
+  <button mat-button *ngIf="auth.isAuthenticated" routerLink="/dashboard">Dashboard</button>
+  <button mat-button *ngIf="auth.isAuthenticated" routerLink="/checkout">Checkout</button>
+
+  <span style="flex: auto;"></span>
+  <button mat-button *ngIf="!auth.isAuthenticated" routerLink="/register">Register</button>
+  <button mat-button *ngIf="!auth.isAuthenticated" routerLink="/login">Login</button>
+  <button mat-button *ngIf="auth.isAuthenticated" (click)="logout()">Logout</button>
+</mat-toolbar>
