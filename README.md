@@ -6,6 +6,7 @@ The deliverables are the two API projects:
 
 
 The following extra features have been added:
+ 
   •  Application logging - done using Serilog for .Net Core
     - serilog is added as middleware to the project, configured in Program.cs, 
     using the settings from appsettings.json in Gateway.API project
