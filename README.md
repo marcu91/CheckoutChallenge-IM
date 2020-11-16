@@ -1,1 +1,1 @@
-# CheckoutChannelge-MI
+# CheckoutChallenge-IM
